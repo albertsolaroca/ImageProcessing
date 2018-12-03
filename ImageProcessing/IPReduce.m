@@ -1,13 +1,14 @@
 function reducedImage = IPReduce(imname,numLevels)
     clc;                                  % clear the command window
     close all;                            % close open figure windows      
-    if (numLevels > 8 || numLevels < 0)
+    if (~ismember(numLevels,[256 128 64 32 16 8 4 2]))
+        reducedImage = 0; %not a correct level, exit with error
     else
         inputfile = [imname,'.tif'];
         figure;
         f = imread(inputfile);
         imshow(f);
-        newLevels = 0:2^numLevels:255
+        newLevels = (1:round(256/(numLevels-1)):256)-1;
         length(newLevels)
         %Agafar figura i separar els valors entre 2^numLevels
         %agafar els valors de la imatge i enviar-los a el mes proper
@@ -19,5 +20,6 @@ function reducedImage = IPReduce(imname,numLevels)
         end
         figure;
         imshow(f);
+        %reducedImage = f; %return transformed image
     end
 end
