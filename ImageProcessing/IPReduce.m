@@ -20,5 +20,6 @@ function reducedImage = IPReduce(imname,numLevels)
         end
         figure;
         imshow(f);
+        reducedImage = f;
     end
 end
