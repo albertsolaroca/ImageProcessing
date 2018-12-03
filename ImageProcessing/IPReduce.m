@@ -8,14 +8,14 @@ function reducedImage = IPReduce(imname,numLevels)
         figure;
         f = imread(inputfile);
         imshow(f);
-        newLevels = (1:round(256/(numLevels-1)):256)-1;
+        newLevels = (0:numLevels-1)*(255/(numLevels-1))
         length(newLevels)
         %Agafar figura i separar els valors entre 2^numLevels
         %agafar els valors de la imatge i enviar-los a el mes proper
         for row = 1:length(f)
             for i = 1:length(f(row,:))
                 [value,index] = min(abs(newLevels-double(f(row,i))));
-                f(row,i) = newLevels(index);
+                f(row,i) = round(newLevels(index));
             end
         end
         figure;
