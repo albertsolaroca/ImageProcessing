@@ -7,7 +7,7 @@ figure;
 imshow(f);
 M = size(f,1);N = size(f,2);
 P = 2 * M; Q=2*N;
-D0 = 460;
+D0 = 30;
 H = IPGaussian(D0,P,Q);
 g = IPftfilter(f,H);
 figure;
