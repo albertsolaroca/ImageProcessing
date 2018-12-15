@@ -1,4 +1,4 @@
-function newImage = IPcontrastsketch(imname)
+function newImage = IPcontraststretch(imname)
 %imnameunction that spread the grey values along all the domain
  %imname has to be a double to operate correctly
 minimname = min(imname(:));
