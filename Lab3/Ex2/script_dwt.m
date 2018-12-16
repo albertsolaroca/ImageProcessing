@@ -1,8 +1,10 @@
+close all;
+clc;
 figure;
-f = imread('noisymri.tif');
+f = imread('vase.tif');
 imshow(f);
 figure;
 g = double(f);
-h = IPdwt2(g,1);
-j = IPcontrastsketch(h);
+i = IPdwt2(g,2);
+j = IPcontraststretch(i);
 imshow(uint8(j))
