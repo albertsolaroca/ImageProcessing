@@ -1,6 +1,6 @@
 function  y = IPdwt(x,jScale)
 %IPdwt discrete wavelet transform based of Haar wavelet
-%   Detailed explanation goes here
+%   Scale an image x using Haart wavelets based on the scale jScale
 d = zeros(1,size(x,2)-size(x,2)/2^jScale);
 index = 0;
 for i = 1:jScale
