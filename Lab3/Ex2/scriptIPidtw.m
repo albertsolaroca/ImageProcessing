@@ -1,0 +1,12 @@
+close all;
+clc;
+figure;
+f = imread('vase.tif');
+imshow(f);
+figure;
+g = double(f);
+i = IPdwt2(g,2);
+imshow(uint8(i));
+j = IPidwt2(i,2);
+figure;
+imshow(uint8(j));
