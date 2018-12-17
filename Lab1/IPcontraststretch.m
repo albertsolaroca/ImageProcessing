@@ -1,5 +1,5 @@
 function newImage = IPcontraststretch(imname)
-%imnameunction that spread the grey values along all the domain
+%function that spread the grey values along all the domain
  %imname has to be a double to operate correctly
 minimname = min(imname(:));
 maximname = max(imname(:));
