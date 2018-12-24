@@ -5,7 +5,9 @@ A = image;                   %Convert to double
 
 A_expanded = zeros(size(A,1)+2,size(A,2)+2); %Expand image
 A_expanded(2:end-1,2:end-1) = A;            %Add image to center
-A_expanded(2:end-1,1)=0;               %Copy edges to sides
+%Per algun motiu si no incloc les seguents linies el programa peta,
+%pero no haurien de servir per res
+A_expanded(2:end-1,1)=0;               %Add a background
 A_expanded(2:end-1,end) = 0;
 A_expanded(1,2:end-1) = 0;
 A_expanded(end,2:end-1) = 0;
