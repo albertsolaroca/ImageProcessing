@@ -5,7 +5,7 @@ function finalImage = IPrecon_by_dilation(F, mask, se)
 finalImage = IPdilate(F,se); %dilate
 finalImage = finalImage & mask; %intersect
 figure;imshow(F);figure;imshow(finalImage);
-while(finalImage ~= F)
+while(~isequal(finalImage,F))
     F = finalImage;
     finalImage = IPdilate(F,se); %dilate
     finalImage = finalImage & mask; %intersect
